@@ -1,0 +1,13 @@
+<launch>
+    <!-- turtlesim 시뮬레이터 -->
+    <node pkg="turtlesim" exec="turtlesim_node" name="turtlesim"/>
+
+    <!-- 움직임 on/off 서비스 서버 노드
+         config/turtle_params.yaml 파일을 읽어서 속도 파라미터 적용 -->
+    <node pkg="basic_turtlesim3" exec="turtle_service_server" name="turtle_service_server" output="screen">
+        <param from="$(find-pkg-share basic_turtlesim3)/config/turtle_params.yaml"/>
+    </node>
+
+    <!-- 목표 각도까지 회전시키는 액션 서버 노드 -->
+    <node pkg="basic_turtlesim3" exec="turtle_action_server" name="turtle_action_server" output="screen"/>
+</launch>

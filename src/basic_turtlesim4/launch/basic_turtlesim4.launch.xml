@@ -1,0 +1,10 @@
+<launch>
+    <!-- turtlesim 시뮬레이터 -->
+    <node pkg="turtlesim" exec="turtlesim_node" name="turtlesim"/>
+
+    <!-- 커스텀 메시지(TurtleInfo) 발행 노드 -->
+    <node pkg="basic_turtlesim4" exec="turtle_info_pub" name="turtle_info_pub" output="screen"/>
+
+    <!-- 커스텀 서비스(MultiSpawn) 서버 노드 -->
+    <node pkg="basic_turtlesim4" exec="multi_spawn_server" name="multi_spawn_server" output="screen"/>
+</launch>

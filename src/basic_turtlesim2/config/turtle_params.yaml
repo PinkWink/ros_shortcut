@@ -1,0 +1,4 @@
+turtle_param_cmd:
+  ros__parameters:
+    linear_velocity: 2.0
+    angular_velocity: 1.5

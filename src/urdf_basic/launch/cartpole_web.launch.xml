@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find-pkg-share urdf_basic)/launch/cartpole_gazebo.launch.py"/>
+  <node pkg="urdf_basic" exec="web_monitor" output="screen">
+    <param name="port" value="8000"/>
+  </node>
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+    <!-- turtlesim 시뮬레이터 -->
+    <node pkg="turtlesim" exec="turtlesim_node" name="turtlesim"/>
+
+    <!-- 파라미터로 속도를 조절하는 cmd_vel 발행 노드
+         config/turtle_params.yaml 파일을 읽어서 파라미터 적용 -->
+    <node pkg="basic_turtlesim2" exec="turtle_param_cmd" name="turtle_param_cmd" output="screen">
+        <param from="$(find-pkg-share basic_turtlesim2)/config/turtle_params.yaml"/>
+    </node>
+</launch>
