@@ -4,7 +4,7 @@
   <name>basic_turtlesim3</name>
   <version>0.0.0</version>
   <description>Basic turtlesim service server, action server, parameter and launch examples</description>
-  <maintainer email="pinkwink.korea@gmail.com">pw</maintainer>
+  <maintainer email="contact@pinklab.art">pw</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>

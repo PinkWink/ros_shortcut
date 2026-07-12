@@ -46,4 +46,4 @@ ros2 run urdf_basic joint_state_plotter
 ## 소개
 
 - PinkLAB — <https://pinklab.art>
-- 문의: pinkwink.korea@gmail.com
+- 문의: contact@pinklab.art

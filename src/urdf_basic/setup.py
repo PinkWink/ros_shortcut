@@ -18,7 +18,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='pw',
-    maintainer_email='pinkwink.korea@gmail.com',
+    maintainer_email='contact@pinklab.art',
     description='Basic URDF example: cart-pole free-fall experiment in Gazebo',
     license='TODO: License declaration',
     extras_require={

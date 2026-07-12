@@ -4,7 +4,7 @@
   <name>basic_turtlesim4_msgs</name>
   <version>0.0.0</version>
   <description>Custom message and service interfaces for basic_turtlesim4</description>
-  <maintainer email="pinkwink.korea@gmail.com">pw</maintainer>
+  <maintainer email="contact@pinklab.art">pw</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
