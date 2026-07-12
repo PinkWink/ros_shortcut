@@ -25,12 +25,12 @@ ROS 2 Jazzy 기초를 빠르게 훑는 예제 워크스페이스입니다. turtl
 
 ```bash
 # 워크스페이스의 src 안에 클론
-mkdir -p ~/ros_shortcut/src
-cd ~/ros_shortcut/src
+mkdir -p ~/ros_ws/src
+cd ~/ros_ws/src
 git clone https://github.com/PinkWink/ros_shortcut.git
 
 # 빌드
-cd ~/ros_shortcut
+cd ~/ros_ws
 colcon build
 source install/setup.bash
 
