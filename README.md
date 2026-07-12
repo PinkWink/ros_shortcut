@@ -78,14 +78,29 @@ ros2 launch pinky_gz_sim launch_sim.launch.xml
 
 # SLAM (다른 터미널)
 ros2 launch pinky_navigation gz_map_building.launch.xml
+ros2 launch pinky_navigation gz_map_view.launch.xml      # RViz에서 지도 확인
 
-# Nav2 (지도 완성 후)
+# Nav2 — 기본으로 map/my_map.yaml을 로드 (map:= 로 다른 지도 지정 가능)
 ros2 launch pinky_navigation gz_bringup_launch.xml
+ros2 launch pinky_navigation gz_nav2_view.launch.xml     # RViz에서 목표 지정
 
 # 램프/표정 제어 예
 ros2 service call /set_lamp pinky_interfaces/srv/SetLamp "{color: {r: 255.0, g: 0.0, b: 0.0}, mode: 2, time: 500}"
 ros2 service call /set_emotion pinky_interfaces/srv/Emotion "{emotion: 'happy'}"
+
+# 표정 화면 보기 (시뮬레이션의 LCD 출력)
+ros2 run rqt_image_view rqt_image_view /screen/image_raw
 ```
+
+> **주의 — 시뮬레이션에서는 반드시 `gz_` 접두사 런치를 사용하세요.**
+> `pinky_navigation`의 런치 파일은 실물 로봇용(`bringup_launch.xml`,
+> `map_building.launch.xml`, …)과 시뮬레이션용(`gz_bringup_launch.xml`,
+> `gz_map_building.launch.xml`, …)이 쌍으로 있습니다. 차이는
+> `use_sim_time`(sim은 True)입니다. Gazebo에 실물용 런치를 쓰면 Nav2는
+> 벽시계, TF/센서는 시뮬레이션 시간이 되어 시간축이 어긋나고,
+> `Transform data too old` 오류와 함께 목표를 받자마자 `Reached the goal!`로
+> 끝나 로봇이 움직이지 않습니다. RViz도 `gz_nav2_view.launch.xml`처럼
+> sim time이 켜진 런치로 띄우는 것이 좋습니다.
 
 ## 소개
 
